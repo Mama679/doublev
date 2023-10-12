@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from '../servicio/usuario.service';
 
@@ -7,14 +7,21 @@ import { UsuarioService } from '../servicio/usuario.service';
   templateUrl: './busquedad.component.html',
   styleUrls: ['./busquedad.component.css']
 })
-export class BusquedadComponent {
+export class BusquedadComponent implements OnInit {
   nombreusuario:string = '';
   respUser:any = null;
+  public page!: number;
 
-  constructor(private userServicio:UsuarioService, private toastrService: ToastrService){
+  constructor(
+    private userServicio:UsuarioService, 
+    private toastrService: ToastrService){
+   
+  }
+  ngOnInit(): void {
    
   }
 
+ 
   buscar(){
     if(this.nombreusuario.trim().length < 4){
       this.respUser=null;
@@ -32,7 +39,6 @@ export class BusquedadComponent {
       if(!resp.error)
        {
         this.respUser = resp.items;  
-        
        }
        else
        {           

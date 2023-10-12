@@ -9,7 +9,7 @@
         </div>
         <div class="container" *ngIf="respUser">
             <div class="row">
-                <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom: 10px;" *ngFor="let item of respUser">
+                <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom: 10px;" *ngFor="let item of respUser | paginate: { itemsPerPage: 10, currentPage: page }">
                     <img src="{{item.avatar_url}}" class="card-img-top" alt="Avatar">
                     <div class="card-body">
                       <h5 class="card-title">{{item.login}}</h5>
@@ -17,10 +17,11 @@
                       <a href="{{item.html_url}}" class="btn btn-primary" target="_blank">Ver Perfil</a>
                     </div>
                 </div>
+                <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
             </div>
            
         </div>
-        
+       
     </div>
    
 </div>
