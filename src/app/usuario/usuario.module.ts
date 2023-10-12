@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BusquedadComponent } from './busquedad/busquedad.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { PaginarComponent } from './paginar/paginar.component';
+import { ConsultarComponent } from './consultar/consultar.component';
 
 
 
@@ -18,7 +19,8 @@ import { PaginarComponent } from './paginar/paginar.component';
   declarations: [
     BusquedadComponent,
     UsuarioComponent,
-    PaginarComponent
+    PaginarComponent,
+    ConsultarComponent
   ],
   imports: [
     CommonModule,
