@@ -1,12 +1,25 @@
 <div class="container">
-    <h2>Buscador de Usuarios</h2>
-    <div class="container">
-        <div class="mb-3">
-            <input name="nombreusuario" placeholder="Ingresa nombre de usuario" [(ngModel)]="nombreusuario" style="width: 35%;"/>
+    
+    <div class="mt4 col-8 offset-2 buscador">
+        <div class="card">
+            <div class="card-header">
+                <h2>Buscador de Usuarios</h2>
+            </div>
+            <form #frmbuscar=ngForm>
+                <div class="card-body">                
+                        <div class="mb-3">
+                            <input name="nombreusuario" placeholder="Ingresa nombre de usuario" [(ngModel)]="nombreusuario" style="width: 35%;"/>
+                        </div>               
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-info" style="width: 30%;" (click)="buscar()">Buscar</button>
+                </div>
+            </form>
         </div>
-        <div class="mb-3" style="margin-left: 3%;">
-            <button class="btn btn-info" style="width: 30%;" (click)="buscar()">Buscar</button>
-        </div>
+    </div>
+   
+        
+    
         <div class="container" *ngIf="respUser">
             <div class="row">
                 <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom: 10px;" *ngFor="let item of respUser | paginate: { itemsPerPage: 10, currentPage: page }">
@@ -22,6 +35,6 @@
            
         </div>
        
-    </div>
+   
    
 </div>
