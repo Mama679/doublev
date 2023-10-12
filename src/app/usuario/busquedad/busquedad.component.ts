@@ -68,7 +68,7 @@ export class BusquedadComponent implements OnInit {
        }
     });
   }
-
+//Grafico
   grafico(){
     let datosSe:any[]=this.respUser.slice(0,9);
     datosSe.forEach(dato =>{
