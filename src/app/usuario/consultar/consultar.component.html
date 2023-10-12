@@ -1,1 +1,35 @@
-<p>consultar works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6" style="margin-top: 3%;margin-bottom: 10px;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Consultar de Usuario</h2>
+                </div>
+                <form #frmbuscar=ngForm>
+                    <div class="card-body">                
+                            <div class="mb-3">
+                                <input name="nombreusuario" placeholder="Ingresa nombre de usuario" [(ngModel)]="nombreusuario" style="width: 35%;"/>
+                            </div>               
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-info" style="width: 30%;" (click)="consultar()">Consultar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-6" *ngIf="respUser">
+            
+            <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom: 10px; margin-top: 3%;">
+                <img src="{{respUser.avatar_url}}" class="card-img-top" alt="Avatar">
+                <div class="card-body">
+                    <h5 class="card-title">{{respUser.name}}</h5>
+                    <p class="card-text">{{respUser.company}} {{respUser.bio}}.</p>
+                    <p class="card-text">{{respUser.location}}.</p>
+                    <a href="{{respUser.html_url}}" class="btn btn-primary" target="_blank">Ver Perfil</a>
+                </div>
+            </div>      
+           
+        </div>
+
+    </div>   
+</div>

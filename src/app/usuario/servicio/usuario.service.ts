@@ -26,4 +26,16 @@ export class UsuarioService {
         })
       );
     }
+
+    consultarUsuario(usuario:string):Observable<any>{
+      let url =`https://api.github.com/users/${usuario}`;
+      return this.http.get(url).pipe(
+        map((resp:any) =>{
+          return resp;
+        }),
+        catchError((error:any) =>{
+          return of(error);
+        })
+      );
+    }
 }
