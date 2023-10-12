@@ -11,10 +11,6 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { PaginarComponent } from './paginar/paginar.component';
 import { ConsultarComponent } from './consultar/consultar.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     BusquedadComponent,
@@ -35,7 +31,8 @@ import { ConsultarComponent } from './consultar/consultar.component';
   exports:[
     BusquedadComponent,
     UsuarioComponent,
-    PaginarComponent
+    PaginarComponent,
+    ConsultarComponent
   ],
   providers:[
     
