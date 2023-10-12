@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Buscador de Usuarios</h2>
+    <div class="container">
+        <div class="mb-3">
+            <input name="nombreusuario" placeholder="Ingresa nombre de usuario" [(ngModel)]="nombreusuario" style="width: 35%;"/>
+        </div>
+        <div class="mb-3" style="margin-left: 3%;">
+            <button class="btn btn-info" style="width: 30%;" (click)="buscar()">Buscar</button>
+        </div>
+        <div class="container" *ngIf="respUser">
+            <div class="row">
+                <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom: 10px;" *ngFor="let item of respUser">
+                    <img src="{{item.avatar_url}}" class="card-img-top" alt="Avatar">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.login}}</h5>
+                      <p class="card-text">{{item.id}} {{item.node_id}}.</p>
+                      <a href="{{item.html_url}}" class="btn btn-primary" target="_blank">Ver Perfil</a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        
+    </div>
+   
+</div>
